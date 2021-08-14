@@ -11,6 +11,7 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
+    'defaultRoute'=>'auto',
     'modules' => [],
     'components' => [
         'request' => [
@@ -44,6 +45,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'site/models-of-brand/<brand_id:\d+>'=>'site/models-of-brand'
             ],
         ],
     ],
