@@ -1,3 +1,12 @@
+<strong>Тестовое задание WEBELEMENT</strong> [webelement.kadastrcard.ru](http://webelement.kadastrcard.ru)<br/>
+<strong>Админка</strong> [webelement.kadastrcard.ru/admin](http://webelement.kadastrcard.ru/admin)
+
+```
+Администратор
+Логин:  admin
+Пароль: 123456
+```
+
 <p align="center">
     <a href="https://github.com/yiisoft" target="_blank">
         <img src="https://avatars0.githubusercontent.com/u/993323" height="100px">
