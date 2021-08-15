@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f567f2e3071007f8922b1d7e059109bf",
+    "content-hash": "ae0df8727e343ae914add53cbcb8bea5",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -613,6 +613,54 @@
                 "source": "https://github.com/paragonie/random_compat"
             },
             "time": "2020-10-15T08:29:30+00:00"
+        },
+        {
+            "name": "slavkovrn/yii2-imagegalary",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SlavKoVrn/yii2-imagegalary.git",
+                "reference": "ac4e45228bc8fe3c84d9e48d3c31e007eb7bd84f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SlavKoVrn/yii2-imagegalary/zipball/ac4e45228bc8fe3c84d9e48d3c31e007eb7bd84f",
+                "reference": "ac4e45228bc8fe3c84d9e48d3c31e007eb7bd84f",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "slavkovrn\\imagegalary\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Viacheslav Kolesnikov",
+                    "email": "slavko.chita@gmail.com",
+                    "homepage": "http://yii2.kadastrcard.ru"
+                }
+            ],
+            "description": "The Yii2 extension uses jQuery PrettyPhoto and OwlCarousel js and makes image galary from php array of structure defined.",
+            "keywords": [
+                "extension",
+                "image galary",
+                "owlcarousel",
+                "prettyPhoto",
+                "yii2"
+            ],
+            "support": {
+                "issues": "https://github.com/SlavKoVrn/yii2-imagegalary/issues",
+                "source": "https://github.com/SlavKoVrn/yii2-imagegalary.git"
+            },
+            "time": "2019-02-11T12:47:26+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

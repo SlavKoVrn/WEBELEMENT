@@ -1,6 +1,6 @@
 <?php
 
-namespace common\models;
+namespace frontend\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
@@ -18,7 +18,7 @@ class AutoSearch extends Auto
     {
         return [
             [['id', 'brand_id', 'model_id'], 'integer'],
-            [['images', 'mileage', 'price', 'phone'], 'safe'],
+            [['images', 'add', 'mileage', 'price', 'phone'], 'safe'],
         ];
     }
 
@@ -57,15 +57,12 @@ class AutoSearch extends Auto
         }
 
         // grid filtering conditions
-        $query->andFilterWhere([
-            'brand_id' => $this->brand_id,
-            'model_id' => $this->model_id,
-        ]);
-
-        $query
-            ->andFilterWhere(['like', 'mileage', $this->mileage])
-            ->andFilterWhere(['like', 'price', $this->price])
-            ->andFilterWhere(['like', 'phone', $this->phone]);
+        if ($this->brand_id > 0){
+            $query->andFilterWhere([
+                'brand_id' => $this->brand_id,
+                'model_id' => $this->model_id,
+            ]);
+        }
 
         return $dataProvider;
     }

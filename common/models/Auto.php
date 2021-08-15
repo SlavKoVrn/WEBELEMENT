@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\helpers\Html;
 
 /**
  * This is the model class for table "auto".
@@ -65,6 +66,26 @@ class Auto extends \yii\db\ActiveRecord
      */
     public function getModel() {
         return $this->hasOne(Model::class, ['id' => 'model_id']);
+    }
+
+    public static function getFirstImageSrc($auto_id)
+    {
+        $model=self::findOne($auto_id);
+        $images=json_decode($model->images);
+        if (is_array($images) and count($images)>0){
+            return $images[0];
+        }
+        return null;
+    }
+
+    public static function getAllImagesSrc($auto_id)
+    {
+        $model=self::findOne($auto_id);
+        $images=json_decode($model->images);
+        if (is_array($images) and count($images)>0){
+            return $images;
+        }
+        return null;
     }
 
 }

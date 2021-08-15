@@ -47,9 +47,13 @@ class Brand extends \yii\db\ActiveRecord
     /**
      * @return array
      */
-    public static function getBrands()
+    public static function getBrands($addEmpty=false)
     {
-        return ArrayHelper::map(self::find()->all(), 'id', 'name');
+        $brands = ArrayHelper::map(self::find()->all(), 'id', 'name');
+        if ($addEmpty){
+            $brands = [0=>''] + $brands;
+        }
+        return $brands;
     }
 
 }

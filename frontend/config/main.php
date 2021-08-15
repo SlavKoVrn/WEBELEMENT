@@ -10,11 +10,12 @@ return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'defaultRoute'=>'auto',
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'request' => [
-            'csrfParam' => '_csrf-frontend',
             'baseUrl' => '',
+            'csrfParam' => '_csrf-frontend',
             'enableCookieValidation' => false,
             'enableCsrfValidation' => false,
         ],
@@ -40,9 +41,11 @@ return [
             'errorAction' => 'site/error',
         ],
         'urlManager' => [
+            'baseUrl' => '',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'auto/view/<id:\d+>' => 'auto/view',
             ],
         ],
     ],

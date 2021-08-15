@@ -47,7 +47,7 @@ class Model extends \yii\db\ActiveRecord
     /**
      * @return array
      */
-    public static function getModels($brand_id)
+    public static function getModels($brand_id,$addEmpty=false)
     {
         if ($brand_id>0){
             $brand=Brand::findOne($brand_id);
@@ -55,7 +55,11 @@ class Model extends \yii\db\ActiveRecord
         }else{
             $code='audi';
         }
-        return ArrayHelper::map(self::find()->where(['code'=>$code])->all(), 'id', 'name');
+        $models = ArrayHelper::map(self::find()->where(['code'=>$code])->all(), 'id', 'name');
+        if ($addEmpty){
+            $models = [0=>''] + $models;
+        }
+        return $models;
     }
 
 }
