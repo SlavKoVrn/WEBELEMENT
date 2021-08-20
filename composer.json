@@ -20,7 +20,8 @@
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
         "kartik-v/yii2-widget-fileinput": "^1.1",
         "yiisoft/yii2-bootstrap": "^2.0",
-        "slavkovrn/yii2-imagegalary": "^2.0"
+        "slavkovrn/yii2-imagegalary": "^2.0",
+        "kartik-v/yii2-widget-colorinput": "^1.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

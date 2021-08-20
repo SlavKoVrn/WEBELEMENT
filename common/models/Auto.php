@@ -11,6 +11,9 @@ use yii\helpers\Html;
  * @property int $id
  * @property int|null $brand_id
  * @property int|null $model_id
+ * @property string|null $vehicle_number
+ * @property string|null $color
+ * @property int|null $paid
  * @property string|null $images
  * @property string|null $mileage
  * @property string|null $price
@@ -32,9 +35,11 @@ class Auto extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['brand_id', 'model_id'], 'integer'],
-            [['images'], 'string'],
+            [['brand_id', 'model_id', 'paid'], 'integer'],
+            [['images', 'comment'], 'string'],
             [['mileage', 'price', 'phone'], 'string', 'max' => 255],
+            [['vehicle_number', 'color'], 'string', 'max' => 20],
+            [['brand_id', 'model_id', 'vehicle_number', 'color'], 'required'],
         ];
     }
 
@@ -47,7 +52,11 @@ class Auto extends \yii\db\ActiveRecord
             'id' => 'Ид',
             'brand_id' => 'Марка',
             'model_id' => 'Модель',
+            'vehicle_number' => 'Номер',
+            'color' => 'Цвет',
+            'paid' => 'Оплачено',
             'images' => 'Фото',
+            'comment' => 'Комментарий',
             'mileage' => 'Пробег',
             'price' => 'Цена',
             'phone' => 'Телефон',

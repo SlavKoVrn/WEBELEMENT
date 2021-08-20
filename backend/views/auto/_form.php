@@ -6,6 +6,8 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use kartik\file\FileInput;
 use yii\helpers\Url;
+use kartik\color\ColorInput;
+use yii\widgets\MaskedInput;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Auto */
@@ -24,6 +26,18 @@ use yii\helpers\Url;
     <?= $form->field($model, 'brand_id')->dropDownList(Brand::getBrands()) ?>
 
     <?= $form->field($model, 'model_id')->dropDownList(Model::getModels($model->brand_id)) ?>
+
+    <?= $form->field($model, 'vehicle_number')->widget(MaskedInput::class,[
+        'mask'=>'a999aa',
+    ]) ?>
+
+    <?= $form->field($model, 'paid')->checkbox() ?>
+
+    <?= $form->field($model, 'color')->widget(ColorInput::class, [
+        'options' => ['placeholder' => 'Цвет автомобиля'],
+    ]) ?>
+
+    <?= $form->field($model, 'comment')->textArea() ?>
 
     <?= $form->field($model, 'mileage')->textInput(['maxlength' => true]) ?>
 

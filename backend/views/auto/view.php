@@ -43,6 +43,23 @@ $this->params['breadcrumbs'][] = $this->title;
                     return Model::findOne($model->model_id)->name;
                 },
             ],
+            'vehicle_number',
+            [
+                'attribute'=>'paid',
+                'value'=>function($model){
+                    if ($model->paid>0)
+                        return 'Да';
+                    return 'Нет';
+                },
+            ],
+            [
+                'attribute'=>'color',
+                'format'=>'raw',
+                'value'=>function($model){
+                    return '<div style="background:'.$model->color.';width:22px;height:22px"></div>';
+                },
+            ],
+            'comment:text',
             'mileage',
             'price',
             'phone',
