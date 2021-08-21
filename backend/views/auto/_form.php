@@ -28,7 +28,7 @@ use yii\widgets\MaskedInput;
     <?= $form->field($model, 'model_id')->dropDownList(Model::getModels($model->brand_id)) ?>
 
     <?= $form->field($model, 'vehicle_number')->widget(MaskedInput::class,[
-        'mask'=>'a999aa/999',
+        'mask'=>'A999AA/9{2,3}',
     ]) ?>
 
     <?= $form->field($model, 'paid')->checkbox() ?>
