@@ -44,22 +44,24 @@ $this->params['breadcrumbs'][] = $this->title;
                     return Model::findOne($model->model_id)->name;
                 }
             ],
+            'vehicle_number',
             'mileage',
             'price',
             'phone',
             [
-		'filter'=>false,
-                'attribute'=>'images',
+                'filter'=>false,
+                'attribute'=>'color',
                 'format'=>'raw',
                 'content'=>function($model){
-                    $_images='';
-                    $images=json_decode($model->images);
-		    if (is_array($images) and count($images)>0){
-	                    foreach ($images as $image){
-	                        $_images.=Html::img($image,['width'=>'40px','height'=>'40px','style'=>'margin:1px']);
-	                    }
-                    }
-                    return $_images;
+                    return '<div style="background:'.$model->color.';height:22px;width:22px"></div>';
+                },
+            ],
+            [
+                'filter'=>false,
+                'attribute'=>'paid',
+                'content'=>function($model){
+                    if ($model->paid>0) return 'Да';
+                    return 'Нет';
                 },
             ],
             ['class' => 'yii\grid\ActionColumn'],

@@ -18,7 +18,7 @@ class AutoSearch extends Auto
     {
         return [
             [['id', 'brand_id', 'model_id'], 'integer'],
-            [['images', 'mileage', 'price', 'phone'], 'safe'],
+            [['images', 'mileage', 'price', 'phone', 'vehicle_number'], 'safe'],
         ];
     }
 
@@ -65,6 +65,7 @@ class AutoSearch extends Auto
         $query
             ->andFilterWhere(['like', 'mileage', $this->mileage])
             ->andFilterWhere(['like', 'price', $this->price])
+            ->andFilterWhere(['like', 'vehicle_number', $this->vehicle_number])
             ->andFilterWhere(['like', 'phone', $this->phone]);
 
         return $dataProvider;
